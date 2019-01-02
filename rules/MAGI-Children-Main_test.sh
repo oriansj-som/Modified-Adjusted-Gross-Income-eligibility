@@ -3,7 +3,7 @@ set -eux
 
 # Initialize table to test values
 sqlite3 core.db <<-EOF
--- Clearing and reseting tables for test 
+-- Clearing and reseting tables for test
 DROP TABLE IF EXISTS CaseID;
 DROP TABLE IF EXISTS Case_Determinations;
 
@@ -33,7 +33,7 @@ EOF
 
 
 
-# Get results to prove 
+# Get results to prove
 
 {
 sqlite3 core.db <<-EOF
@@ -41,6 +41,6 @@ sqlite3 core.db <<-EOF
 SELECT CaseID,  Result, flag FROM Case_Determinations;
 .quit
 EOF
-} #>| rules/results/MAGI-Children-Main_test-result
+} >| rules/results/MAGI-Children-Main-result
 
 exit 0

@@ -3,7 +3,7 @@ set -eux
 
 # Initialize table to test values
 sqlite3 core.db <<-EOF
--- Clearing and reseting tables for test 
+-- Clearing and reseting tables for test
 DROP TABLE IF EXISTS CaseID;
 DROP TABLE IF EXISTS Case_Determinations;
 
@@ -28,10 +28,10 @@ INSERT INTO Case_Determinations ( 'auto', 'CaseID') VALUES (6, 44);
 -- Our sixth case
 INSERT INTO CaseID ( 'CaseID', 'Age', 'FPL', 'Gender', 'Pregnant', 'ComprehensiveInsurance', 'Caretaker') VALUES (00, 0.0, 00, 'Female', 0, 0, 1);
 INSERT INTO Case_Determinations ( 'auto', 'CaseID') VALUES (7, 45);
---Our seventh 
+--Our seventh
 INSERT INTO CaseID ( 'CaseID', 'Age', 'FPL', 'Gender', 'Pregnant', 'ComprehensiveInsurance', 'Caretaker') VALUES (44, 4.4, 244, 'Male', 0, 0, 1);
 INSERT INTO Case_Determinations ( 'auto', 'CaseID') VALUES (9, 35);
--- Final wrap 
+-- Final wrap
 .quit
 EOF
 

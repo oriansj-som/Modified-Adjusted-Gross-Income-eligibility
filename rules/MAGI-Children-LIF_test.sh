@@ -3,11 +3,11 @@ set -eux
 
 # Initialize table to test values
 sqlite3 core.db <<-EOF
--- Clearing and reseting tables for test 
+-- Clearing and reseting tables for test
 DROP TABLE IF EXISTS CaseID;
 DROP TABLE IF EXISTS Case_Determinations;
 
-CREATE TABLE 'CaseID' ('CaseID' INTEGER, 'Age','FPL'  INTEGER, 'Gender', 'Pregnant', 'ComprehensiveInsurance', 'Caretaker'); 
+CREATE TABLE 'CaseID' ('CaseID' INTEGER, 'Age','FPL'  INTEGER, 'Gender', 'Pregnant', 'ComprehensiveInsurance', 'Caretaker');
 CREATE TABLE 'Case_Determinations' ( auto INTEGER, 'CaseID' INTEGER,  'Result'  INTEGER, 'Flag' TEXT);
 --our first case
 INSERT INTO CaseID ('CaseID','Age', 'FPL') VALUES (41, 18, 51);
@@ -31,9 +31,7 @@ EOF
 ./rules/MAGI-Children-LIF.py 8 43
 ./rules/MAGI-Children-LIF.py 9 44
 
-
-
-# Get results to prove 
+# Get results to prove
 
 {
 sqlite3 core.db <<-EOF
@@ -41,6 +39,6 @@ sqlite3 core.db <<-EOF
 SELECT CaseID,  Result, flag FROM Case_Determinations;
 .quit
 EOF
-} #>| rules/results/MAGI-Children-HKE-result
+} >| rules/results/MAGI-Children-LIF-result
 
 exit 0

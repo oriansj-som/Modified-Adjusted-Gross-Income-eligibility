@@ -22,16 +22,16 @@ INSERT INTO Case_Determinations ( 'auto', 'CaseID') VALUES (8, 52);
 INSERT INTO CaseID ( 'CaseID', 'Age', 'FPL') VALUES (53, 63, 106);
 INSERT INTO Case_Determinations ( 'auto', 'CaseID') VALUES (9, 53);
 --our fifth case
-INSERT INTO CaseID ( 'CaseID', 'Age', 'FPL') VALUES (54, 17.75, 132);
+INSERT INTO CaseID ( 'CaseID', 'Age', 'FPL') VALUES (54, 19, 132);
 INSERT INTO Case_Determinations ( 'auto', 'CaseID') VALUES (10, 54);
 --our sixth case
-INSERT INTO CaseID ( 'CaseID', 'Age', 'FPL') VALUES (55, 17.5, 135);
+INSERT INTO CaseID ( 'CaseID', 'Age', 'FPL') VALUES (55, 21, 135);
 INSERT INTO Case_Determinations ( 'auto', 'CaseID') VALUES (11, 55);
 --our seventh case
-INSERT INTO CaseID ( 'CaseID', 'Age', 'FPL') VALUES (56, 18.5, 130);
+INSERT INTO CaseID ( 'CaseID', 'Age', 'FPL') VALUES (56, 20 , 130);
 INSERT INTO Case_Determinations ( 'auto', 'CaseID') VALUES (12, 56);
 --our eighth case
-INSERT INTO CaseID ( 'CaseID', 'Age', 'FPL') VALUES (57, 18, 140);
+INSERT INTO CaseID ( 'CaseID', 'Age', 'FPL') VALUES (57, 22, 140);
 INSERT INTO Case_Determinations ( 'auto', 'CaseID') VALUES (13, 57);
 --our nineth case
 INSERT INTO CaseID ( 'CaseID', 'Age', 'FPL') VALUES (58, 68, 150);
@@ -40,12 +40,11 @@ INSERT INTO Case_Determinations ( 'auto', 'CaseID') VALUES (14, 58);
 INSERT INTO CaseID ( 'CaseID', 'Age', 'FPL') VALUES (59, 18, 100);
 INSERT INTO Case_Determinations ( 'auto', 'CaseID') VALUES (15, 59);
 --our eleventh case
-INSERT INTO CaseID ( 'CaseID', 'Age', 'FPL') VALUES (60, 17, 120);
-INSERT INTO Case_Determinations ( 'auto', 'CaseID') VALUES (16, 60);
+INSERT INTO CaseID ( 'CaseID', 'Age', 'FPL') VALUES (61, 30, 120);
+INSERT INTO Case_Determinations ( 'auto', 'CaseID') VALUES (16, 61);
 -- Final wrap
 .quit
 EOF
-
 
 # Run with required case info
 ./rules/MAGI-Children-HKE.py 6 41
@@ -58,8 +57,8 @@ EOF
 ./rules/MAGI-Children-HKE.py 13 57
 ./rules/MAGI-Children-HKE.py 14 58
 ./rules/MAGI-Children-HKE.py 15 59
-./rules/MAGI-Children-HKE.py 16 60
-# Get results to prove
+./rules/MAGI-Children-HKE.py 16 61
+# Get results to prove success
 
 {
 sqlite3 core.db <<-EOF
@@ -67,6 +66,6 @@ sqlite3 core.db <<-EOF
 SELECT CaseID,  Result, flag FROM Case_Determinations;
 .quit
 EOF
-} >| rules/results/MAGI-Children-HKE-result
+} # >| rules/results/MAGI-Children-HKE-result
 
 exit 0

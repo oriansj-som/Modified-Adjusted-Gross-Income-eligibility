@@ -17,20 +17,11 @@ INSERT INTO Case_Determinations ( 'auto', 'CaseID') VALUES (2, 2);
 INSERT INTO CaseID ( 'CaseID', 'Age', 'FPL', 'Gender', 'Pregnant', 'ComprehensiveInsurance', 'Caretaker') VALUES (40, 4.7, 300, 'Male', 0, 0, 1);
 INSERT INTO Case_Determinations ( 'auto', 'CaseID') VALUES (3, 40);
 -- Our third case
-INSERT INTO CaseID ( 'CaseID', 'Age', 'FPL', 'Gender', 'Pregnant', 'ComprehensiveInsurance', 'Caretaker') VALUES (50, 54.5, 95, 'Female', 0, 0, 1);
+INSERT INTO CaseID ( 'CaseID', 'Age', 'FPL', 'Gender', 'Pregnant', 'ComprehensiveInsurance', 'Caretaker') VALUES (50, 54.5, 195, 'Female', 0, 0, 1);
 INSERT INTO Case_Determinations ( 'auto', 'CaseID') VALUES (1, 41);
 -- Our fourth case
 INSERT INTO CaseID ( 'CaseID', 'Age', 'FPL', 'Gender', 'Pregnant', 'ComprehensiveInsurance', 'Caretaker') VALUES (51, 21.7, 87, 'Male', 0, 0, 1);
 INSERT INTO Case_Determinations ( 'auto', 'CaseID') VALUES (5, 42);
--- Our fifth case
-INSERT INTO CaseID ( 'CaseID', 'Age', 'FPL', 'Gender', 'Pregnant', 'ComprehensiveInsurance', 'Caretaker') VALUES (20, 30.7, 30, 'Male', 0, 0, 1);
-INSERT INTO Case_Determinations ( 'auto', 'CaseID') VALUES (6, 44);
--- Our sixth case
-INSERT INTO CaseID ( 'CaseID', 'Age', 'FPL', 'Gender', 'Pregnant', 'ComprehensiveInsurance', 'Caretaker') VALUES (00, 0.0, 00, 'Female', 0, 0, 1);
-INSERT INTO Case_Determinations ( 'auto', 'CaseID') VALUES (7, 45);
---Our seventh
-INSERT INTO CaseID ( 'CaseID', 'Age', 'FPL', 'Gender', 'Pregnant', 'ComprehensiveInsurance', 'Caretaker') VALUES (44, 4.4, 244, 'Male', 0, 0, 1);
-INSERT INTO Case_Determinations ( 'auto', 'CaseID') VALUES (9, 35);
 -- Final wrap
 .quit
 EOF
@@ -41,9 +32,7 @@ EOF
 ./rules/MAGI-Children-HK1.py 3 40
 ./rules/MAGI-Children-HK1.py 1 50
 ./rules/MAGI-Children-HK1.py 5 51
-./rules/MAGI-Children-HK1.py 6 20
-./rules/MAGI-Children-HK1.py 7 00
-./rules/MAGI-Children-HK1.py 9 44
+
 
 # Get results to prove success
 {
